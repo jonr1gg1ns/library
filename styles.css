@@ -6,6 +6,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -23,6 +24,8 @@ body {
     display: flex;
     justify-content: center;
     background: linear-gradient(45deg, #6A11CB, #2575FC);
+    align-items: center;
+    font-size: 50px;
 }
 
 .leftside {
