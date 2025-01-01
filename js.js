@@ -36,10 +36,30 @@ function addBookToLibrary() {
     let bookRead = document.createElement("p")
     bookRead.classList.add("book-read")
     bookCard.appendChild(bookRead)
+    let deleteButton = document.createElement("button")
+    deleteButton.classList.add("remove-button")   
+    bookCard.appendChild(deleteButton)
+    deleteButton.textContent = "Remove"
     bookTitle.textContent =  "Title: " + newBook.title
     bookAuthor.textContent = "Author: " + newBook.author
     bookPages.textContent = "Pages: " + newBook.pages
     bookRead.textContent = newBook.read ? "Read" : "Not Read";
+    let toggleReadButton = document.createElement("button");
+    toggleReadButton.classList.add("toggle-read-button");
+    bookCard.appendChild(toggleReadButton);
+    toggleReadButton.textContent = newBook.read ? "Mark as Unread" : "Mark as Read";
+    deleteButton.addEventListener("click", function() {
+        bookCard.remove(); 
+        const index = myLibrary.indexOf(newBook);
+        if (index > -1) {
+          myLibrary.splice(index, 1); 
+        }
+      });
+      toggleReadButton.addEventListener("click", function() {
+        newBook.read = !newBook.read; 
+        bookRead.textContent = newBook.read ? "Read" : "Not Read"; 
+        toggleReadButton.textContent = newBook.read ? "Mark as Unread" : "Mark as Read"; 
+      });
  } else {
     alert("You can only  add up to 8 books.")
  }
@@ -63,3 +83,4 @@ clearButton.addEventListener("click", function(event) {
     myLibrary.length = 0;
     library.innerHTML = ""
 })
+
