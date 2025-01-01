@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js.js" defer></script>
+    <link rel="stylesheet" href="styles.css">   
+    <title>Document</title>
+</head>
+<body>
+ <div class="container">
+   <div class="header">
+        <h1 class="thebrary">Library of Alexandria</h1>
+   </div>
+   <div class="leftside">
+    <form id="bookForm" class="book-form">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" maxlength="20" id="title" name="title" class="form-input" required>
+      
+        <label for="author" class="form-label">Author:</label>
+        <input type="text" maxlength="20" id="author" name="author" class="form-input" required>
+      
+        <label for="pages" class="form-label">Pages:</label>
+        <input type="number" max="99999" id="pages" name="pages" class="form-input" min="0" required>
+      
+        <label for="read" class="form-label">Read:</label>
+        <select id="read" name="read" class="form-input">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      
+        <button type="submit" class="submit-button">Add Book</button>
+        <button type="button" class="clear">Clear</button>
+      </form>
+      
+      <div id="libraryDisplay" class="library-display"></div>  
+   </div>
+   <div class="mainLibrary">
+
+   </div>
+ </div>
+</body>
+</html>
